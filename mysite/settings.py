@@ -79,9 +79,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': os.environ["DATABASE_URL"],
+    "default": env.db(
+        "DATABASE_URL",
+        default="postgresql://maevvpilwabopigb:gspxuqzqrtwxrhjg@5.78.119.155:8001/revrhyzfoxmbinbj",
+    ),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
